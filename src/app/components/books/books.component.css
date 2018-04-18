@@ -1,0 +1,8 @@
+.book {
+    display: inline-block;
+    margin: 20px 10px 0px 10px;
+}
+
+.book img {
+    width: 250px;
+}

@@ -1,0 +1,5 @@
+<div id="books-container">
+    <div *ngFor="let book of books | slice:0:10; let i=index" class="book">
+      <img src="https://wolnelektury.pl/media/{{book.cover}}">
+    </div>
+</div>
