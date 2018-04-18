@@ -8,6 +8,10 @@ export class BooksService {
     constructor(private http: Http) { }
 
     public getBooks(): Observable<Response> {
-        return this.http.get('/api/authors/jules-gabriel-verne/books/');
-      }
+        return this.http.get('/api/authors/adam-mickiewicz/books/');
+    }
+
+    public getAudiobooks(): Observable<Response> {
+        return this.http.get('/api/authors/adam-mickiewicz/audiobooks/');
+    }
 }
