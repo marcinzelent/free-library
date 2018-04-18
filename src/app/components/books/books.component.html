@@ -1,5 +1,6 @@
 <div id="books-container">
-    <div *ngFor="let book of books" class="book" (click)="openDetails()">
+    <div *ngFor="let book of books" class="book"
+    [class.selected]="book === selectedBook" (click)="onSelect(book)">
       <img src="https://wolnelektury.pl/media/{{book.cover}}">
     </div>
 </div>

@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+
+import { Book } from "../../models/book"
+import { BooksComponent } from '../books/books.component';
 
 @Component({
   selector: 'app-book-details',
@@ -6,8 +10,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book-details.component.css']
 })
 export class BookDetailsComponent implements OnInit {
+  @Input() book;
 
-  constructor() { }
+  constructor(public activeModal: NgbActiveModal) {
+  }
 
   ngOnInit() {
   }

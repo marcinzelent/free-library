@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { BooksComponent } from './components/books/books.component';
@@ -10,7 +11,8 @@ import { BookDetailsComponent } from './components/book-details/book-details.com
 
 const appRoutes: Routes = [
   {path: 'books', component: BooksComponent},
-  {path: 'audiobooks', component: AudiobooksComponent}
+  {path: 'audiobooks', component: AudiobooksComponent},
+  {path: 'book-details', component: BookDetailsComponent}
 ]
 
 @NgModule({
@@ -25,7 +27,8 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true }),
     BrowserModule,
-    HttpModule
+    HttpModule,
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
