@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { Book } from '../../models/book'
@@ -18,15 +17,13 @@ export class BooksComponent implements OnInit {
   private selectedBook : Book;
 
   constructor(private service: BooksService,
-    private route: ActivatedRoute,
-    private router: Router,
     private modalService: NgbModal) {
     service.getBooks().subscribe(response => this.books = response.json());
    }
 
    ngOnInit() {}
 
-   public onSelect(book : Book){
+  public onSelect(book : Book){
      this.selectedBook = book;
      this.open();
   }

@@ -1,10 +1,31 @@
 <div id="details-container">
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
     <img src="https://wolnelektury.pl/media/{{book.cover}}">
     <div id="details-info">
         <h5>{{book.author}}</h5>
-        <h1>{{book.title}}</h1>
-        <p><small>Epoch: {{book.epoch}}<br>
-        Genre: {{book.genre}}<br>
-        Kind: {{book.kind}}</small></p>
+        <h1>{{details?.title}}</h1>
+        <p><small>
+            <b>Epoch: </b>{{book.epoch}}<br>
+            <b>Genre: </b>{{book.genre}}<br>
+            <b>Kind: </b>{{book.kind}}
+        </small></p>
+        <p id="fragment" *ngIf="details?.fragment_data!=null" [innerHTML]="details?.fragment_data.html"></p>
+        <p><audio *ngIf="details?.media.length>0" controls>
+            <source *ngFor="let media of details?.media" src="{{media.url}}" type="audio/{{media.type}}">
+        </audio></p>
+        <a *ngIf="details?.pdf!=''" class="btn btn-primary" href="{{details?.pdf}}" role="button">
+            Download PDF
+        </a>
+        <a *ngIf="details?.epub!=''" class="btn btn-primary" href="{{details?.epub}}" role="button">
+            Download EPUB
+        </a>
+        <a *ngIf="details?.mobi!=''" class="btn btn-primary" href="{{details?.mobi}}" role="button">
+            Download MOBI
+        </a>
+        <a *ngIf="details?.fb2!=''" class="btn btn-primary" href="{{details?.fb2}}" role="button">
+            Download FB2
+        </a>
     </div>
 </div>

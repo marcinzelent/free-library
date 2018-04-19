@@ -6,3 +6,15 @@
 .modal-xl {
     max-width: 1280px !important;
 }
+
+#fragment {
+    padding: 20px;
+    background: #efe;
+    border-radius: 5px;
+    max-width: 572px;
+}
+
+#fragment p {
+    margin: 0;
+    font-style: italic;
+}

@@ -1,6 +1,11 @@
 .book {
     display: inline-block;
     margin: 10px;
+    cursor: pointer;
+}
+
+.book :hover {
+    opacity: 0.8;
 }
 
 .book img {
