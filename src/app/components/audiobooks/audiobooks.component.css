@@ -1,3 +1,7 @@
+#books-container {
+    text-align: center;
+}
+
 .book {
     display: inline-block;
     margin: 10px;
